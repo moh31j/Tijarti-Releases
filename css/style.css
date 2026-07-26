@@ -1929,25 +1929,28 @@ footer {
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
 .sim-controls {
   padding: 30px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--glass-border);
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .sim-screen {
-  background: #1e1e2d;
-  padding: 20px;
+  background: #ffffff;
+  padding: 30px;
   position: relative;
   transition: 0.5s;
 }
 
 .sim-screen.offline-mode {
-  background: #2d1e1e; /* Slight red tint */
+  background: #fef2f2; /* Light red tint */
 }
 
 .sim-header {
@@ -1955,7 +1958,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   margin-bottom: 20px;
 }
 
@@ -1964,25 +1967,32 @@ footer {
   align-items: center;
   gap: 10px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .sim-logo i {
-  color: var(--accent-cyan);
+  color: var(--gradient-primary);
 }
 
 .sim-status {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(16, 185, 129, 0.1);
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.sim-screen.offline-mode .sim-status {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .sim-screen.offline-mode .sim-status .status-icon {
-  color: var(--accent-red);
+  color: #ef4444;
 }
 
 .sim-content {
@@ -1999,9 +2009,10 @@ footer {
 
 .mock-item {
   height: 80px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #f1f5f9;
   border-radius: 8px;
   animation: pulse 2s infinite;
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 @keyframes pulse {
