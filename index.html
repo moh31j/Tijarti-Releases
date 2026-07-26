@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijarti Suite v1.2.0 — نظام نقاط البيع المتكامل | Offline-First POS</title>
+    <meta name="description" content="Tijarti Suite — نظام نقاط البيع الأسرع والأكثر استقراراً. يعمل بدون إنترنت مع إدارة المخزون، الفوترة، المشتريات، والعروض الترويجية.">
+    <meta name="keywords" content="POS, نقاط البيع, تجارتي, Tijarti, نظام محاسبة, إدارة مخزون, فوترة, offline">
+    <meta name="author" content="MATRICODE">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Dynamic Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <!-- Cinematic Background Elements -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon-wrapper">
+                    <i data-lucide="store" class="logo-icon"></i>
+                </div>
+                <span class="logo-text">Tijarti <span class="badge">v1.2.0</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#features">الميزات</a></li>
+                <li><a href="#showcase">جولة في النظام</a></li>
+                <li><a href="#gallery">معرض الصور</a></li>
+                <li><a href="#stats">الإحصائيات</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary glowing">احصل على نسخة تجريبية</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================================= -->
+    <section id="hero" class="hero cinematic-section">
+        <div class="container hero-container">
+            <div class="hero-content reveal fade-in-up">
+                <div class="spotlight"></div>
+                <div class="hero-badge glass">
+                    <i data-lucide="shield-check"></i>
+                    <span>Offline-First • Enterprise-Grade • Lightning Fast</span>
+                </div>
+                <h1>
+                    <span class="gradient-text">نظام نقاط البيع</span>
+                    <br>
+                    <span class="gradient-text-alt">الأسرع والأكثر استقراراً</span>
+                    <br>
+                    <span class="hero-highlight">لمتجرك</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span id="typingText" class="typing-text"></span>
+                    <span class="typing-cursor">|</span>
+                </p>
+                <div class="hero-actions">
+                    <a href="#showcase" class="btn btn-primary btn-large glowing">
+                        <i data-lucide="play"></i>
+                        ابدأ الجولة
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large glass">
+                        <i data-lucide="sparkles"></i>
+                        اكتشف الميزات
+                    </a>
+                </div>
+                <div class="hero-stats-mini">
+                    <div class="stat-mini">
+                        <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">ميزة متقدمة</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-mini">
+                        <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">أوفلاين</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-mini">
+                        <span class="stat-number" data-count="2">0</span>
+                        <span class="stat-label">لغة مدعومة</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal fade-in-up delay-2">
+                <div class="hero-image-stack tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184506.png" alt="واجهة نقطة بيع التجزئة - Tijarti Suite" class="hero-image glass-border" loading="eager">
+                    <div class="glow-effect"></div>
+                    <div class="floating-badge badge-top-right glass">
+                        <i data-lucide="zap"></i>
+                        <span>أداء فوري</span>
+                    </div>
+                    <div class="floating-badge badge-bottom-left glass">
+                        <i data-lucide="wifi-off"></i>
+                        <span>بلا إنترنت</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>اكتشف المزيد</span>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- INFINITE MARQUEE TICKER -->
+    <!-- ========================================= -->
+    <section class="marquee-section" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item"><i data-lucide="shopping-cart"></i> نقطة بيع التجزئة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="building-2"></i> نقطة بيع الجملة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="package"></i> إدارة المخزون</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="receipt"></i> الفوترة المتقدمة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="tag"></i> العروض الترويجية</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="wallet"></i> الصندوق والورديات</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="truck"></i> المشتريات</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="bar-chart-3"></i> التقارير المتقدمة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="printer"></i> طباعة حرارية</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="wifi-off"></i> يعمل بلا إنترنت</span>
+                <span class="marquee-dot">✦</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item"><i data-lucide="shopping-cart"></i> نقطة بيع التجزئة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="building-2"></i> نقطة بيع الجملة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="package"></i> إدارة المخزون</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="receipt"></i> الفوترة المتقدمة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="tag"></i> العروض الترويجية</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="wallet"></i> الصندوق والورديات</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="truck"></i> المشتريات</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="bar-chart-3"></i> التقارير المتقدمة</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="printer"></i> طباعة حرارية</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item"><i data-lucide="wifi-off"></i> يعمل بلا إنترنت</span>
+                <span class="marquee-dot">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FEATURES SECTION -->
+    <!-- ========================================= -->
+    <section id="features" class="features cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="layers"></i> الوحدات الأساسية</span>
+                <h2 class="gradient-text">كل ما يحتاجه متجرك في نظام واحد</h2>
+                <p>مصمم بعناية فائقة ليغطي جميع احتياجات التجارة من البيع إلى التقارير</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card tilt-card reveal fade-in-up">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="shopping-cart" class="feature-icon text-cyan"></i>
+                    </div>
+                    <h3>نقطة بيع التجزئة</h3>
+                    <p>واجهة بيع سريعة مع دعم الباركود، سلال متعددة، اختصارات لوحة المفاتيح، وطباعة فورية للفواتير.</p>
+                    <div class="feature-tag">POS Retail</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-1">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="building-2" class="feature-icon text-purple"></i>
+                    </div>
+                    <h3>نقطة بيع الجملة</h3>
+                    <p>نظام مخصص لبيع الجملة مع تسعير VIP، إدارة الزبائن، وبون التسليم والفاتورة الرسمية.</p>
+                    <div class="feature-tag">POS Wholesale</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-2">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="package" class="feature-icon text-blue"></i>
+                    </div>
+                    <h3>إدارة المنتجات والمخزون</h3>
+                    <p>مركز إدارة شامل مع فلاتر ذكية، تصدير Excel/PDF، استوديو الصور الذكي، وتتبع الأرباح.</p>
+                    <div class="feature-tag">Inventory Hub</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-3">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="receipt" class="feature-icon text-green"></i>
+                    </div>
+                    <h3>الفوترة المتقدمة</h3>
+                    <p>فاتورة A4 رسمية، بون تسليم، وتيكت POS مع باركود. مع خيارات التصدير والمشاركة.</p>
+                    <div class="feature-tag">Invoicing</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-4">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="tag" class="feature-icon text-pink"></i>
+                    </div>
+                    <h3>العروض الترويجية</h3>
+                    <p>إنشاء عروض ترويجية وخصومات بنسب مئوية مع فترة صلاحية وتطبيق آني على البيع.</p>
+                    <div class="feature-tag">Promotions</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-5">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="wallet" class="feature-icon text-orange"></i>
+                    </div>
+                    <h3>الصندوق والورديات</h3>
+                    <p>إدارة الصندوق اليومي مع تتبع الإيداع والسحب، أهداف المبيعات، وإغلاق الوردية.</p>
+                    <div class="feature-tag">Cash Register</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-6">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="truck" class="feature-icon text-indigo"></i>
+                    </div>
+                    <h3>المشتريات وطلبات التوريد</h3>
+                    <p>إنشاء أوامر الشراء مع بحث بالباركود، حفظ كمسودة، وإرسال عبر واتساب.</p>
+                    <div class="feature-tag">Purchasing</div>
+                </div>
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-7">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="bar-chart-3" class="feature-icon text-teal"></i>
+                    </div>
+                    <h3>سجل المعاملات والتقارير</h3>
+                    <p>سجل شامل لكل المعاملات مع فلاتر متقدمة، إحصائيات مالية، وتصدير البيانات.</p>
+                    <div class="feature-tag">Reports</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- SHOWCASE SECTION (ZIG-ZAG) -->
+    <!-- ========================================= -->
+    <section id="showcase" class="showcase cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="monitor"></i> جولة داخل النظام</span>
+                <h2 class="gradient-text">شاهد قوة Tijarti بعينيك</h2>
+                <p>تعرف على كل شاشة من شاشات النظام مع شرح تفصيلي للميزات</p>
+            </div>
+
+            <!-- Showcase 1: نقطة بيع التجزئة -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">01</span>
+                    <h3>نقطة بيع التجزئة</h3>
+                    <p>الشاشة الرئيسية لنقطة البيع مصممة لأقصى سرعة في الأداء. استخدم الماسح الضوئي أو ابحث يدوياً، أضف المنتجات للسلة، وأنهِ عملية البيع بنقرة واحدة.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> 3 سلال متزامنة للعملاء</li>
+                        <li><i data-lucide="check-circle"></i> اختصارات لوحة مفاتيح (F1-F12)</li>
+                        <li><i data-lucide="check-circle"></i> عرض المنتجات بالصور أو جدول</li>
+                        <li><i data-lucide="check-circle"></i> فلترة حسب الفئة والمفضلة</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184506.png" alt="نقطة بيع التجزئة" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 2: نقطة بيع الجملة -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">02</span>
+                    <h3>نقطة بيع الجملة</h3>
+                    <p>نظام بيع متخصص للجملة مع مستويات تسعير مختلفة (تجزئة، جملة، VIP، جملة VIP). يدعم إدارة الزبائن ومتابعة الديون والأرصدة.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> 4 مستويات تسعير</li>
+                        <li><i data-lucide="check-circle"></i> إدارة حسابات الزبائن</li>
+                        <li><i data-lucide="check-circle"></i> تتبع الديون والأرصدة</li>
+                        <li><i data-lucide="check-circle"></i> طباعة بون التسليم</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184519.png" alt="نقطة بيع الجملة" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 3: تأكيد الدفع -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">03</span>
+                    <h3>تأكيد الدفع وإنهاء الفاتورة</h3>
+                    <p>نافذة دفع ذكية تدعم عدة طرق دفع: نقداً، على الحساب، شيك/CIB، ودفع مقسم (مشترك). مع حساب المبلغ المتبقي تلقائياً.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> 4 طرق دفع مرنة</li>
+                        <li><i data-lucide="check-circle"></i> أزرار مبالغ سريعة</li>
+                        <li><i data-lucide="check-circle"></i> حساب الباقي تلقائياً</li>
+                        <li><i data-lucide="check-circle"></i> تأكيد بنقرة واحدة</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184530.png" alt="تأكيد الدفع" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 4: الفاتورة والبون -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">04</span>
+                    <h3>معاينة وتصدير الفواتير</h3>
+                    <p>ثلاثة أنماط فوترة احترافية: الفاتورة الرسمية A4، بون التسليم (Bon de Livraison)، والبون الصغير POS مع باركود. كلها قابلة للطباعة والتصدير.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> فاتورة A4 رسمية</li>
+                        <li><i data-lucide="check-circle"></i> بون التسليم Bon de Livraison</li>
+                        <li><i data-lucide="check-circle"></i> تيكت POS مع باركود</li>
+                        <li><i data-lucide="check-circle"></i> تصدير CSV/Excel</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card dual-image">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184555.png" alt="بون التسليم" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 5: تيكت POS -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">05</span>
+                    <h3>تيكت POS الصغير</h3>
+                    <p>طباعة إيصال حراري (Thermal Receipt) احترافي مع باركود لكل فاتورة. مثالي للطابعات الحرارية 58mm و 80mm مع شعار المتجر.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> طباعة حرارية فورية</li>
+                        <li><i data-lucide="check-circle"></i> باركود لكل فاتورة</li>
+                        <li><i data-lucide="check-circle"></i> تخصيص شعار المتجر</li>
+                        <li><i data-lucide="check-circle"></i> دعم 58mm و 80mm</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184600.png" alt="تيكت POS" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 6: سجل المعاملات -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">06</span>
+                    <h3>سجل المعاملات الشامل</h3>
+                    <p>سجل كامل لكل المعاملات المالية مع إحصائيات فورية: إجمالي المبيعات، المشتريات، المرتجعات، وصافي التدفق المالي. فلاتر متقدمة بالتاريخ والنوع.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> إحصائيات مالية فورية</li>
+                        <li><i data-lucide="check-circle"></i> فلترة بالتاريخ والنوع</li>
+                        <li><i data-lucide="check-circle"></i> عرض جدولي ورسوم بيانية</li>
+                        <li><i data-lucide="check-circle"></i> تتبع كل حركة مالية</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184606.png" alt="سجل المعاملات" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 7: الصندوق والورديات -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">07</span>
+                    <h3>حسابات الصندوق والورديات</h3>
+                    <p>إدارة يومية شاملة للصندوق مع تتبع الرصيد الافتتاحي، المبيعات النقدية، المبالغ المودعة والمسحوبة. هدف مبيعات يومي مع شريط تقدم مرئي.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> تفاصيل الوردية الجارية</li>
+                        <li><i data-lucide="check-circle"></i> إيداع وسحب ومصروف</li>
+                        <li><i data-lucide="check-circle"></i> هدف مبيعات يومي</li>
+                        <li><i data-lucide="check-circle"></i> إغلاق الوردية وتسليم</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184613.png" alt="الصندوق والورديات" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 8: إدارة المنتجات -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">08</span>
+                    <h3>مركز إدارة المنتجات</h3>
+                    <p>مركز شامل (Inventory Hub) لإدارة كل المنتجات مع بحث متقدم، فلاتر ذكية، تصدير Excel/PDF، كتالوج B2B، واستيراد بيانات. شريط إحصائيات أسفل الشاشة.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> فلاتر ذكية متعددة</li>
+                        <li><i data-lucide="check-circle"></i> تصدير Excel وكتالوج PDF</li>
+                        <li><i data-lucide="check-circle"></i> استوديو الصور الذكي</li>
+                        <li><i data-lucide="check-circle"></i> إحصائيات المخزون الفورية</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184618.png" alt="إدارة المنتجات" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 9: العروض الترويجية -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">09</span>
+                    <h3>العروض الترويجية والخصومات</h3>
+                    <p>إنشاء وتفعيل عروض ترويجية آلية مع تحديد نوع الخصم (نسبة/مبلغ)، فترة الصلاحية، والسلع المشمولة. تطبيق فوري على عمليات البيع.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> خصم نسبة مئوية أو مبلغ ثابت</li>
+                        <li><i data-lucide="check-circle"></i> تحديد فترة صلاحية</li>
+                        <li><i data-lucide="check-circle"></i> تحديد السلع المشمولة</li>
+                        <li><i data-lucide="check-circle"></i> تطبيق آني على البيع</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184626.png" alt="العروض الترويجية" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 10: المشتريات -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">10</span>
+                    <h3>سندات المشتريات</h3>
+                    <p>إنشاء وإدارة سندات الشراء من الموردين مع تتبع المبالغ، الفوترة التلقائية، وخيار الاسترجاع. واجهة مألوفة مع اختصارات لوحة المفاتيح.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> إدارة الموردين</li>
+                        <li><i data-lucide="check-circle"></i> تتبع الأرصدة والمبالغ</li>
+                        <li><i data-lucide="check-circle"></i> طباعة تلقائية عند التأكيد</li>
+                        <li><i data-lucide="check-circle"></i> خيار الاسترجاع</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184631.png" alt="سندات المشتريات" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 11: طلبات التوريد -->
+            <div class="showcase-item zigzag reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">11</span>
+                    <h3>طلبات التوريد (Purchase Orders)</h3>
+                    <p>إنشاء طلبيات شراء احترافية مع بحث متقدم بالباركود أو الرمز. حفظ كمسودة أو إرسال مباشرة عبر واتساب للمورد.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> بحث متقدم (F4)</li>
+                        <li><i data-lucide="check-circle"></i> حفظ كمسودة</li>
+                        <li><i data-lucide="check-circle"></i> إرسال عبر واتساب</li>
+                        <li><i data-lucide="check-circle"></i> تتبع تاريخ التوصيل</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184658.png" alt="طلبات التوريد" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <!-- Showcase 12: استوديو الصور -->
+            <div class="showcase-item zigzag reverse reveal fade-in-up">
+                <div class="showcase-text">
+                    <span class="showcase-number">12</span>
+                    <h3>استوديو الصور الذكي</h3>
+                    <p>محرك بحث صور متقدم يتيح البحث عن صور المنتجات من الإنترنت، استيرادها من الحاسوب، أو استخراجها من المواقع. كل ذلك بنقرة واحدة.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> بحث صور من الإنترنت</li>
+                        <li><i data-lucide="check-circle"></i> استيراد من الحاسوب</li>
+                        <li><i data-lucide="check-circle"></i> استخراج من المواقع</li>
+                        <li><i data-lucide="check-circle"></i> مسح باركود مباشر</li>
+                    </ul>
+                </div>
+                <div class="showcase-image tilt-card">
+                    <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 184836.png" alt="استوديو الصور الذكي" class="glass-border" loading="lazy">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- STATS SECTION -->
+    <!-- ========================================= -->
+    <section id="stats" class="stats cinematic-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card reveal fade-in-up">
+                    <i data-lucide="monitor" class="stat-icon text-cyan"></i>
+                    <span class="stat-big-number" data-count="12">0</span>
+                    <span class="stat-desc">شاشة رئيسية متكاملة</span>
+                </div>
+                <div class="stat-card glass-card reveal fade-in-up delay-1">
+                    <i data-lucide="keyboard" class="stat-icon text-purple"></i>
+                    <span class="stat-big-number" data-count="12">0</span>
+                    <span class="stat-desc">اختصار لوحة مفاتيح</span>
+                </div>
+                <div class="stat-card glass-card reveal fade-in-up delay-2">
+                    <i data-lucide="file-text" class="stat-icon text-green"></i>
+                    <span class="stat-big-number" data-count="3">0</span>
+                    <span class="stat-desc">أنماط فوترة احترافية</span>
+                </div>
+                <div class="stat-card glass-card reveal fade-in-up delay-3">
+                    <i data-lucide="globe" class="stat-icon text-orange"></i>
+                    <span class="stat-big-number" data-count="2">0</span>
+                    <span class="stat-desc">لغة مدعومة (عربي/فرنسي)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- GALLERY SECTION -->
+    <!-- ========================================= -->
+    <section id="gallery" class="gallery cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="image"></i> معرض لقطات الشاشة</span>
+                <h2 class="gradient-text">معرض الصور الشامل</h2>
+                <p>لقطات تفصيلية من مختلف شاشات وميزات برنامج Tijarti Suite</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TECHNOLOGY SECTION -->
+    <!-- ========================================= -->
+    <section class="tech-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="cpu"></i> البنية التقنية</span>
+                <h2 class="gradient-text">مبني بأحدث التقنيات</h2>
+                <p>هندسة برمجية متقدمة تضمن الأداء والاستقرار والأمان</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card glass-card reveal fade-in-up">
+                    <div class="tech-logo">🎯</div>
+                    <h4>Flutter</h4>
+                    <p>واجهة أصلية عالية الأداء</p>
+                </div>
+                <div class="tech-card glass-card reveal fade-in-up delay-1">
+                    <div class="tech-logo">💾</div>
+                    <h4>SQLite (Drift)</h4>
+                    <p>قاعدة بيانات محلية سريعة</p>
+                </div>
+                <div class="tech-card glass-card reveal fade-in-up delay-2">
+                    <div class="tech-logo">🏗️</div>
+                    <h4>Clean Architecture</h4>
+                    <p>بنية نظيفة قابلة للتوسع</p>
+                </div>
+                <div class="tech-card glass-card reveal fade-in-up delay-3">
+                    <div class="tech-logo">🔒</div>
+                    <h4>Offline-First</h4>
+                    <p>يعمل 100% بدون إنترنت</p>
+                </div>
+                <div class="tech-card glass-card reveal fade-in-up delay-4">
+                    <div class="tech-logo">🖨️</div>
+                    <h4>Thermal Printing</h4>
+                    <p>دعم الطباعة الحرارية</p>
+                </div>
+                <div class="tech-card glass-card reveal fade-in-up delay-5">
+                    <div class="tech-logo">📊</div>
+                    <h4>PDF Engine</h4>
+                    <p>محرك PDF متقدم للفواتير</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- OFFLINE SIMULATOR SECTION (INTERACTIVE) -->
+    <!-- ========================================= -->
+    <section class="simulator-section cinematic-section" id="offline-simulator">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass" style="color: var(--accent-red); border-color: rgba(239, 68, 68, 0.3);"><i data-lucide="power-off"></i> تجربة تفاعلية</span>
+                <h2 class="gradient-text">ماذا يحدث عند انقطاع الإنترنت؟</h2>
+                <p>جرب بنفسك.. اضغط على الزر لمحاكاة انقطاع الإنترنت وشاهد كيف يتصرف Tijarti</p>
+            </div>
+            
+            <div class="simulator-box glass-card reveal fade-in-up" id="simBox">
+                <div class="sim-controls">
+                    <button id="simBtn" class="btn btn-primary glowing" style="background: var(--accent-red); color: white; border: none; padding: 12px 30px; font-size: 1.1rem; border-radius: 12px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);">
+                        <i data-lucide="wifi-off"></i> اقطع الإنترنت الآن
+                    </button>
+                </div>
+                
+                <div class="sim-screen" id="simScreen">
+                    <div class="sim-header">
+                        <div class="sim-logo"><i data-lucide="store"></i> متجري</div>
+                        <div class="sim-status" id="simStatus">
+                            <i data-lucide="wifi" class="status-icon text-green"></i>
+                            <span class="status-text">متصل</span>
+                        </div>
+                    </div>
+                    <div class="sim-content">
+                        <div class="sim-message" id="simMessage">
+                            <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 10px;">النظام يعمل بشكل ممتاز</h3>
+                            <p style="color: var(--text-secondary);">سرعة الاستجابة: 0.2 ثانية</p>
+                        </div>
+                        <div class="sim-mock-pos">
+                            <div class="mock-item"></div>
+                            <div class="mock-item"></div>
+                            <div class="mock-item"></div>
+                            <div class="mock-item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- LIFETIME LICENSE CERTIFICATE SECTION -->
+    <!-- ========================================= -->
+    <section class="license-section cinematic-section" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(168, 85, 247, 0.05));">
+        <div class="container">
+            <div class="license-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div class="license-content reveal fade-in-up">
+                    <span class="section-tag glass" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);"><i data-lucide="award"></i> ضمان مدى الحياة</span>
+                    <h2 class="gradient-text" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; text-align: right;">رخصة تجارية رسمية مدى الحياة</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; text-align: right;">
+                        عند شرائك <strong>Tijarti Suite</strong>، ستحصل على شهادة تفعيل رسمية خاصة بمحلك التجاري مرتبطة بجهازك (HWID) لضمان أعلى مستويات الأمان.
+                    </p>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-primary); font-weight: 600;">
+                            <i data-lucide="check-circle-2" style="color: #fbbf24; width: 24px; height: 24px;"></i> بدون اشتراكات شهرية أو سنوية
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-primary); font-weight: 600;">
+                            <i data-lucide="shield-check" style="color: var(--accent-green); width: 24px; height: 24px;"></i> مفعل ومحمي بنجاح
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-primary); font-weight: 600;">
+                            <i data-lucide="headphones" style="color: var(--accent-cyan); width: 24px; height: 24px;"></i> دعم فني مخصص
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="license-image tilt-card reveal fade-in-up delay-1" style="position: relative;">
+                    <div style="position: absolute; inset: -20px; background: linear-gradient(135deg, #fbbf24, #2563eb); filter: blur(40px); opacity: 0.15; z-index: 0; border-radius: 20px;"></div>
+                    <div class="glass-card" style="padding: 10px; position: relative; z-index: 1; border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 16px; background: var(--bg-secondary);">
+                        <img src="../01_Stage1_POS_Only/Screenshot 2026-07-26 185009.png" alt="شهادة تفعيل Tijarti Suite" style="width: 100%; border-radius: 8px; display: block;" onerror="this.src='https://via.placeholder.com/600x400/1e1e2d/fbbf24?text=Tijarti+License'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- HARDWARE COMPATIBILITY SECTION -->
+    <!-- ========================================= -->
+    <section class="hardware-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="plug"></i> التوافقية</span>
+                <h2 class="gradient-text">يتصل بجميع أجهزتك</h2>
+                <p>صُمم ليعمل مع عتاد نقاط البيع القياسي الموجود في متجرك حالياً</p>
+            </div>
+            
+            <div class="hardware-ecosystem reveal fade-in-up">
+                <div class="center-hub tilt-card">
+                    <div class="hub-logo">
+                        <i data-lucide="store"></i>
+                        <span>Tijarti</span>
+                    </div>
+                    <div class="pulse-rings">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                </div>
+                
+                <div class="hardware-nodes">
+                    <div class="node node-1 glass-card tilt-card delay-1">
+                        <i data-lucide="scan-line" class="text-cyan"></i>
+                        <span>قارئ باركود</span>
+                    </div>
+                    <div class="node node-2 glass-card tilt-card delay-2">
+                        <i data-lucide="printer" class="text-purple"></i>
+                        <span>طابعة حرارية</span>
+                    </div>
+                    <div class="node node-3 glass-card tilt-card delay-3">
+                        <i data-lucide="server" class="text-green"></i>
+                        <span>درج نقدية</span>
+                    </div>
+                    <div class="node node-4 glass-card tilt-card delay-4">
+                        <i data-lucide="monitor-smartphone" class="text-orange"></i>
+                        <span>شاشات اللمس</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- HORIZONTAL AUTO-SCROLL CAROUSEL -->
+    <!-- ========================================= -->
+    <section class="carousel-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="clapperboard"></i> عرض سينمائي</span>
+                <h2 class="gradient-text">تجربة بصرية لا تُنسى</h2>
+                <p>شاهد لقطات من البرنامج تتحرك بسلاسة أمامك</p>
+            </div>
+        </div>
+        <div class="carousel-track" id="carouselTrack">
+            <!-- Populated via JS -->
+        </div>
+    </section>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ALGERIAN MERCHANT SOLUTION SECTION -->
+    <!-- ========================================= -->
+    <section class="algeria-solution cinematic-section" style="background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(16, 185, 129, 0.05) 50%, var(--bg-primary) 100%);">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass" style="color: var(--accent-green); border-color: rgba(16, 185, 129, 0.3);"><i data-lucide="shield-check"></i> صُمم للجزائر</span>
+                <h2 class="gradient-text" style="background: linear-gradient(135deg, #10b981, #00d4ff); -webkit-background-clip: text;">الحل النهائي لمشاكل التاجر الجزائري</h2>
+                <p>نعرف جيداً التحديات التي تواجهك يومياً، لذلك صممنا <strong>Tijarti Suite</strong> ليكون الدرع الواقي لتجارتك.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- المشكلة 1 -->
+                <div class="feature-card glass-card tilt-card reveal fade-in-up">
+                    <div class="feature-icon-wrapper" style="color: var(--accent-red); background: rgba(239, 68, 68, 0.1);">
+                        <i data-lucide="wifi-off" class="feature-icon"></i>
+                    </div>
+                    <h3>انقطاع وضعف الإنترنت؟</h3>
+                    <p><strong>انتهت هذه المشكلة.</strong> Tijarti يعمل 100% Offline (بدون إنترنت). بياناتك، مبيعاتك، ومخزونك محفوظة محلياً بأمان تام. لن تتوقف مبيعاتك ثانية واحدة.</p>
+                    <div class="feature-tag" style="color: var(--accent-green);">✓ حل جذري</div>
+                </div>
+                
+                <!-- المشكلة 2 -->
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-1">
+                    <div class="feature-icon-wrapper" style="color: var(--accent-orange); background: rgba(245, 158, 11, 0.1);">
+                        <i data-lucide="zap" class="feature-icon"></i>
+                    </div>
+                    <h3>الأنظمة ثقيلة ومعقدة؟</h3>
+                    <p><strong>السرعة هي الأساس.</strong> مبني بتقنية Flutter مع قاعدة بيانات Drift لضمان استجابة فورية (أقل من ثانية) أثناء البيع، حتى مع وجود آلاف المنتجات.</p>
+                    <div class="feature-tag" style="color: var(--accent-green);">✓ حل جذري</div>
+                </div>
+                
+                <!-- المشكلة 3 -->
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-2">
+                    <div class="feature-icon-wrapper" style="color: var(--accent-pink); background: rgba(236, 72, 153, 0.1);">
+                        <i data-lucide="credit-card" class="feature-icon"></i>
+                    </div>
+                    <h3>تكاليف الاشتراكات الشهرية؟</h3>
+                    <p><strong>ادفع مرة واحدة فقط.</strong> تخلص من عبء الاشتراكات الشهرية للأنظمة السحابية. امتلك البرنامج بالكامل واستثمر أموالك في تكبير تجارتك.</p>
+                    <div class="feature-tag" style="color: var(--accent-green);">✓ حل جذري</div>
+                </div>
+                
+                <!-- المشكلة 4 -->
+                <div class="feature-card glass-card tilt-card reveal fade-in-up delay-3">
+                    <div class="feature-icon-wrapper" style="color: var(--accent-blue); background: rgba(59, 130, 246, 0.1);">
+                        <i data-lucide="users" class="feature-icon"></i>
+                    </div>
+                    <h3>صعوبة تدريب العمال؟</h3>
+                    <p><strong>واجهة بديهية جداً.</strong> تصميم عصري بواجهة عربية (RTL) واضحة واختصارات ذكية لوحة المفاتيح. سيتعلم البائع استخدام النظام في 15 دقيقة فقط.</p>
+                    <div class="feature-tag" style="color: var(--accent-green);">✓ حل جذري</div>
+                </div>
+            </div>
+            
+            <div class="marketing-quote reveal fade-in-up delay-4" style="text-align: center; margin-top: 60px; padding: 40px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px solid var(--glass-border);">
+                <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--accent-green); margin-bottom: 20px; opacity: 0.5;"></i>
+                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1.5;">"نحن لا نبيع لك مجرد برنامج، نحن نقدم لك راحة البال والتحكم الكامل في متجرك."</h3>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">Tijarti Suite — صُنع ليدوم.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- COMPARISON SECTION -->
+    <!-- ========================================= -->
+    <section class="comparison-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="git-compare"></i> لماذا Tijarti؟</span>
+                <h2 class="gradient-text">الفرق بين Tijarti والأنظمة التقليدية</h2>
+                <p>قارن بنفسك واكتشف لماذا Tijarti هو الخيار الأفضل</p>
+            </div>
+            <div class="comparison-table glass-card reveal fade-in-up">
+                <div class="comparison-header">
+                    <div class="comparison-feature-col">الميزة</div>
+                    <div class="comparison-tijarti-col">
+                        <span class="comparison-logo gradient-text">Tijarti Suite</span>
+                    </div>
+                    <div class="comparison-other-col">الأنظمة التقليدية</div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">يعمل بدون إنترنت</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no"><i data-lucide="x-circle"></i></span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">سرعة البيع</div>
+                    <div class="comparison-tijarti"><span class="check-yes">فوري < 1 ثانية</span></div>
+                    <div class="comparison-other"><span class="check-no">3-10 ثواني</span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">واجهة عربية أصلية RTL</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no"><i data-lucide="x-circle"></i></span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">اشتراك شهري</div>
+                    <div class="comparison-tijarti"><span class="check-yes">بدون اشتراك ❤️</span></div>
+                    <div class="comparison-other"><span class="check-no">5,000 - 15,000 دج/شهر</span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">تحديثات مجانية</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no">مدفوعة</span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">بيع تجزئة + جملة</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no">تجزئة فقط عادةً</span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">طباعة حرارية + PDF + A4</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no">نوع واحد فقط</span></div>
+                </div>
+                <div class="comparison-row reveal fade-in-up">
+                    <div class="comparison-feature">أمان البيانات (محلي 100%)</div>
+                    <div class="comparison-tijarti"><span class="check-yes"><i data-lucide="check-circle"></i></span></div>
+                    <div class="comparison-other"><span class="check-no">سحابي (مخاطر)</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ========================================= -->
+    <section class="testimonials-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="quote"></i> آراء المستخدمين</span>
+                <h2 class="gradient-text">ماذا يقول مستخدمو Tijarti</h2>
+                <p>تجارب حقيقية من أصحاب المتاجر اللي اختاروا Tijarti</p>
+            </div>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial-card glass-card reveal fade-in-up">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"اللوجيسيال هبلني بالسرعة نتاعو، تهنيت من الكريدي والحسابات القديمة. ساهل بزاف ننصح بيه قع الحوانت!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">أ.م</div>
+                        <div class="testimonial-info">
+                            <h4>أحمد محمد</h4>
+                            <span>صاحب سوبريت — الجزائر العاصمة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card reveal fade-in-up delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"أحسن حاجة فيه هي يخدم بلا إنترنت. الكونيكسيون دايما طايحة عندنا بصح مع هاد البرنامج ماحبسناش البيع ولا دقيقة."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ي.ب</div>
+                        <div class="testimonial-info">
+                            <h4>يوسف بلقاسم</h4>
+                            <span>محل إلكترونيات — وهران</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card reveal fade-in-up delay-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"نظام الجملة والدياي سلكني، كنت نضيع وقت كبير باش نحسب، درك كلش أوطوماتيك والخدمة ولات نقية."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">خ.ع</div>
+                        <div class="testimonial-info">
+                            <h4>خالد عبد الرحمن</h4>
+                            <span>تاجر جملة — قسنطينة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FAQ ACCORDION -->
+    <!-- ========================================= -->
+    <section class="faq-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="help-circle"></i> الأسئلة الشائعة</span>
+                <h2 class="gradient-text">أسئلة متكررة</h2>
+                <p>إجابات على أكثر الأسئلة شيوعاً حول Tijarti Suite</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item glass-card reveal fade-in-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل يعمل البرنامج بدون إنترنت فعلاً؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، Tijarti Suite مصمم بنهج Offline-First. يعمل 100% بدون اتصال بالإنترنت. جميع البيانات تُحفظ محلياً على جهازك باستخدام قاعدة بيانات SQLite المشفرة. لا تحتاج لأي اتصال إنترنت للبيع أو إدارة المخزون أو طباعة الفواتير.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card reveal fade-in-up delay-1">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل البرنامج يدعم الطباعة الحرارية؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، يدعم Tijarti الطابعات الحرارية بمقاسي 58mm و 80mm مع إمكانية تخصيص شعار المتجر وحجم الخط. كما يدعم طباعة فواتير A4 وبون التسليم عبر طابعات عادية.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card reveal fade-in-up delay-2">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل يمكنني استخدامه لبيع التجزئة والجملة معاً؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بالتأكيد! يوفر Tijarti نظامين منفصلين: نقطة بيع التجزئة (POS Retail) ونقطة بيع الجملة (POS Wholesale) مع 4 مستويات تسعير مختلفة: تجزئة، جملة، VIP، وجملة VIP. يمكنك التبديل بينهما بسهولة.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card reveal fade-in-up delay-3">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>كيف يتم تصدير البيانات والتقارير؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يمكنك تصدير البيانات بصيغ Excel (CSV) و PDF. كما يوفر كتالوج B2B احترافي. جميع التقارير المالية وسجلات المعاملات قابلة للتصدير والمشاركة عبر واتساب أو البريد الإلكتروني.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card reveal fade-in-up delay-4">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>ما هي اللغات المدعومة؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يدعم Tijarti Suite حالياً اللغتين العربية والفرنسية. الواجهة مصممة أصلاً بتقنية RTL (من اليمين لليسار) لتجربة عربية أصيلة. يمكن التبديل بين اللغات من الإعدادات.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card reveal fade-in-up delay-5">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل البيانات آمنة؟</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بياناتك آمنة 100% لأنها تُحفظ محلياً على جهازك فقط. لا يتم إرسال أي بيانات لخوادم خارجية. قاعدة البيانات مشفرة ويمكنك إنشاء نسخ احتياطية في أي وقت.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ROADMAP TIMELINE -->
+    <!-- ========================================= -->
+    <section class="roadmap-section cinematic-section">
+        <div class="container">
+            <div class="section-header reveal fade-in-up">
+                <span class="section-tag glass"><i data-lucide="rocket"></i> خارطة الطريق</span>
+                <h2 class="gradient-text">رحلة التطوير: 6 مراحل نحو العالمية</h2>
+                <p>نظام Tijarti مصمم ليتطور معك من نقطة بيع محلية إلى نظام إدارة شركات متكامل</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item reveal fade-in-up">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge active-badge">✅ متاح الآن (المرحلة الحالية)</span>
+                        <h4>المرحلة 1: نقطة بيع محلية (Offline POS)</h4>
+                        <p>نظام يعمل 100% بدون إنترنت مع قاعدة بيانات محلية. استجابة فورية، وإدارة كاملة للمبيعات والمخزون في متجرك.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal fade-in-up delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge">🔜 قريباً</span>
+                        <h4>المرحلة 2: نظام الشبكة المحلية (LAN Ecosystem)</h4>
+                        <p>ربط نقطة البيع بتطبيقات الهاتف (مثل تطبيق موزعي الجملة - Van Sales) عبر شبكة Wi-Fi المحلية بدون الحاجة لإنترنت خارجي.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal fade-in-up delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge">🚀 مخطط</span>
+                        <h4>المرحلة 3: النظام السحابي (Cloud ERP)</h4>
+                        <p>قاعدة بيانات مركزية آمنة (PostgreSQL) لربط فروع متعددة ومزامنة البيانات في الوقت الفعلي مع لوحة تحكم حية للإدارة.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal fade-in-up delay-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge">🌟 رؤية مستقبلية</span>
+                        <h4>المرحلة 4: منصة سحابية متعددة المتاجر (SaaS)</h4>
+                        <p>منصة سحابية متكاملة تسمح بإنشاء حسابات واشتراكات للتجار ببيانات منفصلة وآمنة تماماً، مع نظام صلاحيات متقدم.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal fade-in-up delay-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge">🏢 للشركات</span>
+                        <h4>المرحلة 5: نظام إدارة الشركات (Enterprise ERP)</h4>
+                        <p>نظام شامل يغطي المحاسبة المتقدمة، الموارد البشرية (HR)، إدارة العلاقات (CRM)، والتصنيع ضمن بيئة عمل واحدة مترابطة.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal fade-in-up delay-5">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-badge">🌐 القمة</span>
+                        <h4>المرحلة 6: المنصة المتكاملة (Enterprise Platform)</h4>
+                        <p>متجر تطبيقات وإضافات خارجية، أدوات أتمتة وذكاء اصطناعي لتحليل البيانات المعقدة واتخاذ القرارات التجارية.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ADVANCED ORDER FORM & WHATSAPP CTA -->
+    <!-- ========================================= -->
+    <section id="order" class="order-section cinematic-section">
+        <div class="container">
+            <div class="order-container glass-card reveal fade-in-up">
+                <div class="order-header">
+                    <h2>أطلب نسختك الآن</h2>
+                    <p>اترك رقمك هنا، سنتصل بك قبل إرسال الطلب. الدفع عند الاستلام.</p>
+                </div>
+                
+                <form id="orderForm" class="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>الاسم الكامل / اسم المحل <span class="required">*</span></label>
+                            <input type="text" id="orderName" placeholder="مثال: يوسف، سوبريت الخير..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف <span class="required">*</span></label>
+                            <input type="tel" id="orderPhone" placeholder="0552 42 15 39" dir="ltr" style="text-align: right;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>الولاية <span class="required">*</span></label>
+                            <input type="text" id="orderProvince" placeholder="مثال: الجزائر، سطيف، وهران..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>البلدية / النشاط (اختياري)</label>
+                            <input type="text" id="orderActivity" placeholder="مثال: باب الزوار - بيع مواد غذائية">
+                        </div>
+                    </div>
+                    
+                    <div class="package-selection">
+                        <p class="package-title">ما الذي تحتاجه؟</p>
+                        <div class="package-options">
+                            <label class="package-card" for="pkgTrial">
+                                <input type="radio" name="package" id="pkgTrial" value="trial">
+                                <div class="pkg-content">
+                                    <div class="pkg-header">
+                                        <i data-lucide="download"></i>
+                                        <h4>تحميل النسخة التجريبية</h4>
+                                    </div>
+                                    <p>مجانية — جرّب قبل ما تشري</p>
+                                    <span class="pkg-badge text-green">تحميل للتطبيق والبرنامج</span>
+                                </div>
+                            </label>
+                            
+                            <label class="package-card selected" for="pkgFull">
+                                <input type="radio" name="package" id="pkgFull" value="full" checked>
+                                <div class="pkg-content">
+                                    <div class="pkg-header">
+                                        <i data-lucide="shopping-bag" class="text-blue"></i>
+                                        <h4>شراء الرخصة الكاملة</h4>
+                                    </div>
+                                    <p>USB يوصلك + دعم فني مدى الحياة</p>
+                                </div>
+                                <div class="radio-check"><i data-lucide="check"></i></div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit-order glowing" id="btnSubmitOrder">
+                        <i data-lucide="shopping-bag"></i>
+                        <span>شراء الآن — 12,000 دج فقط</span>
+                    </button>
+                    
+                    <div class="order-trust-footer">
+                        <span><i data-lucide="truck"></i> توصيل حتى باب المحل</span>
+                        <span><i data-lucide="banknote"></i> الدفع عند الاستلام</span>
+                        <span><i data-lucide="clock"></i> التوصيل خلال 48 ساعة</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/213775977227" target="_blank" class="floating-whatsapp" id="floatingWhatsapp">
+            <i data-lucide="message-circle"></i>
+        </a>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon-wrapper">
+                            <i data-lucide="store" class="logo-icon"></i>
+                        </div>
+                        <span class="logo-text">Tijarti Suite</span>
+                    </div>
+                    <p class="footer-desc">نظام نقاط بيع متكامل مصمم للسوق العربية. سريع، مستقر، ويعمل بدون إنترنت.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#features">الميزات</a></li>
+                        <li><a href="#showcase">جولة في النظام</a></li>
+                        <li><a href="#gallery">معرض الصور</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المستخدم</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <div class="contact-info">
+                        <a href="tel:0775977227"><i data-lucide="phone"></i> 0775977227</a>
+                        <span class="developer-credit">MATRICODE © 2026</span>
+                    </div>
+                </div>
+            </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Tijarti Suite v1.2.0. المطور: <strong>MATRICODE - 0775977227</strong>. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+            <i data-lucide="x"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">
+            <i data-lucide="chevron-right"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Preview">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <!-- ========================================= -->
+    <!-- SOCIAL PROOF NOTIFICATIONS (FLOATING) -->
+    <!-- ========================================= -->
+    <div class="social-proof-container" id="socialProofContainer">
+        <!-- Populated via JS -->
+    </div>
+
+</body>
+</html>
