@@ -708,75 +708,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === ORDER FORM LOGIC ===
-    const packageCards = document.querySelectorAll('.type-toggle');
-    const submitBtnSpan = document.querySelector('#btnSubmitOrder span');
     const submitBtn = document.getElementById('btnSubmitOrder');
     const orderForm = document.getElementById('orderForm');
-    const toggleBg = document.querySelector('.toggle-bg');
     
     // Admin WhatsApp Number (change this to your actual number)
     const adminPhone = "213775977227"; // Tijarti Support Number
-
-    if (packageCards.length > 0) {
-        packageCards.forEach((card, index) => {
-            const radio = card.querySelector('input[type="radio"]');
-            
-            card.addEventListener('click', () => {
-                // Remove selected class from all
-                packageCards.forEach(c => {
-                    c.classList.remove('selected');
-                    c.style.color = 'var(--text-secondary)';
-                });
-                // Add to current
-                card.classList.add('selected');
-                card.style.color = '#fff';
-                radio.checked = true;
-                
-                if (toggleBg) {
-                    toggleBg.style.transform = index === 0 ? 'translateX(0)' : 'translateX(-100%)';
-                }
-                
-                // Update Button Text & Style
-                if (radio.value === 'trial') {
-                    submitBtnSpan.textContent = 'طلب النسخة التجريبية (مجاناً)';
-                    submitBtn.style.background = 'rgba(255,255,255,0.1)';
-                    submitBtn.style.boxShadow = 'none';
-                } else {
-                    submitBtnSpan.textContent = 'تأكيد الطلب — 12,000 دج';
-                    submitBtn.style.background = 'var(--gradient-primary)';
-                    submitBtn.style.boxShadow = '0 10px 30px rgba(59, 130, 246, 0.3)';
-                }
-            });
-        });
         
-        // Handle Form Submission
-        if (orderForm) {
-            orderForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const name = document.getElementById('orderName').value;
-                const phone = document.getElementById('orderPhone').value;
-                const province = document.getElementById('orderProvince').value;
-                const activity = document.getElementById('orderActivity').value;
-                const packageType = document.querySelector('input[name="package"]:checked').value;
-                
-                const typeText = packageType === 'full' ? 'شراء الرخصة الكاملة (12,000 دج)' : 'النسخة التجريبية (مجانية)';
-                
-                // Construct WhatsApp Message
-                let message = `*طلب جديد - Tijarti Suite* 🛒\n\n`;
-                message += `👤 *الاسم/المحل:* ${name}\n`;
-                message += `📱 *رقم الهاتف:* ${phone}\n`;
-                message += `📍 *الولاية:* ${province}\n`;
-                if (activity) message += `🏪 *النشاط:* ${activity}\n`;
-                message += `📦 *الطلب:* ${typeText}\n`;
-                
-                // Encode and open WhatsApp
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodedMessage}`;
-                
-                window.open(whatsappUrl, '_blank');
-            });
-        }
+    // Handle Form Submission
+    if (orderForm) {
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('orderName').value;
+            const phone = document.getElementById('orderPhone').value;
+            const province = document.getElementById('orderProvince').value;
+            const activity = document.getElementById('orderActivity').value;
+            
+            const typeText = 'شراء الرخصة الكاملة (12,000 دج)';
+            
+            // Construct WhatsApp Message
+            let message = `*طلب جديد - Tijarti Suite* 🛒\n\n`;
+            message += `👤 *الاسم/المحل:* ${name}\n`;
+            message += `📱 *رقم الهاتف:* ${phone}\n`;
+            message += `📍 *الولاية:* ${province}\n`;
+            if (activity) message += `🏪 *الالبلدية:* ${activity}\n`;
+            message += `📦 *الطلب:* ${typeText}\n`;
+            
+            // Encode and open WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
     }
 
     // Re-initialize all icons after DOM changes
