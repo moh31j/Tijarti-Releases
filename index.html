@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
 </head>
 <body>
     <!-- Dynamic Cursor Glow -->
@@ -1056,77 +1056,93 @@
     <!-- ========================================= -->
     <!-- ADVANCED ORDER FORM & WHATSAPP CTA -->
     <!-- ========================================= -->
-    <section id="order" class="order-section cinematic-section">
+    <section id="order" class="order-section cinematic-section" style="position: relative; padding: 120px 0;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="container">
-            <div class="order-container glass-card reveal fade-in-up">
-                <div class="order-header">
-                    <h2>أطلب نسختك الآن</h2>
-                    <p>اترك رقمك هنا، سنتصل بك قبل إرسال الطلب. الدفع عند الاستلام.</p>
-                </div>
+            <div class="order-container glass-card reveal fade-in-up" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 50px rgba(59, 130, 246, 0.1); border-radius: 30px; overflow: hidden; padding: 0;">
                 
-                <form id="orderForm" class="order-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>الاسم الكامل / اسم المحل <span class="required">*</span></label>
-                            <input type="text" id="orderName" placeholder="مثال: يوسف، سوبريت الخير..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>رقم الهاتف <span class="required">*</span></label>
-                            <input type="tel" id="orderPhone" placeholder="0552 42 15 39" dir="ltr" style="text-align: right;" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>الولاية <span class="required">*</span></label>
-                            <input type="text" id="orderProvince" placeholder="مثال: الجزائر، سطيف، وهران..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>البلدية / النشاط (اختياري)</label>
-                            <input type="text" id="orderActivity" placeholder="مثال: باب الزوار - بيع مواد غذائية">
-                        </div>
-                    </div>
-                    
-                    <div class="package-selection">
-                        <p class="package-title">ما الذي تحتاجه؟</p>
-                        <div class="package-options">
-                            <label class="package-card" for="pkgTrial">
-                                <input type="radio" name="package" id="pkgTrial" value="trial">
-                                <div class="pkg-content">
-                                    <div class="pkg-header">
-                                        <i data-lucide="download"></i>
-                                        <h4>تحميل النسخة التجريبية</h4>
-                                    </div>
-                                    <p>مجانية — جرّب قبل ما تشري</p>
-                                    <span class="pkg-badge text-green">تحميل للتطبيق والبرنامج</span>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;" class="order-split-layout">
+                    <!-- Left Side: Info & Trust -->
+                    <div style="padding: 60px; background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), transparent); border-left: 1px solid rgba(255, 255, 255, 0.05);">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #fff;">ابدأ رحلتك معنا</h2>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px;">املأ بياناتك أدناه وسيقوم فريقنا بالتواصل معك فوراً لتأكيد الطلب وتحديد موعد التسليم.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <div style="display: flex; align-items: center; gap: 15px; color: #fff;">
+                                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(16, 185, 129, 0.2); display: flex; justify-content: center; align-items: center; color: var(--accent-green);">
+                                    <i data-lucide="shield-check"></i>
                                 </div>
-                            </label>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.1rem;">ترخيص مدى الحياة</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">بدون اشتراكات مخفية</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px; color: #fff;">
+                                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(59, 130, 246, 0.2); display: flex; justify-content: center; align-items: center; color: var(--accent-cyan);">
+                                    <i data-lucide="truck"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.1rem;">توصيل مجاني 58 ولاية</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">الدفع يداً بيد عند الاستلام</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px; color: #fff;">
+                                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(245, 158, 11, 0.2); display: flex; justify-content: center; align-items: center; color: var(--accent-orange);">
+                                    <i data-lucide="headphones"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.1rem;">دعم فني VIP</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">فريق مختص في خدمتك 7/7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: The Form -->
+                    <div style="padding: 60px;">
+                        <form id="orderForm" style="display: flex; flex-direction: column; gap: 24px;">
                             
-                            <label class="package-card selected" for="pkgFull">
-                                <input type="radio" name="package" id="pkgFull" value="full" checked>
-                                <div class="pkg-content">
-                                    <div class="pkg-header">
-                                        <i data-lucide="shopping-bag" class="text-blue"></i>
-                                        <h4>شراء الرخصة الكاملة</h4>
-                                    </div>
-                                    <p>USB يوصلك + دعم فني مدى الحياة</p>
+                            <!-- Sleek Toggle -->
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 16px; padding: 6px; display: flex; position: relative; margin-bottom: 10px;">
+                                <label style="flex: 1; text-align: center; padding: 12px; cursor: pointer; border-radius: 12px; z-index: 1; color: #fff; font-weight: bold; transition: 0.3s;" class="type-toggle selected">
+                                    <input type="radio" name="package" value="full" checked style="display: none;">
+                                    النسخة الكاملة
+                                </label>
+                                <label style="flex: 1; text-align: center; padding: 12px; cursor: pointer; border-radius: 12px; z-index: 1; color: var(--text-secondary); transition: 0.3s;" class="type-toggle">
+                                    <input type="radio" name="package" value="trial" style="display: none;">
+                                    النسخة التجريبية
+                                </label>
+                                <div class="toggle-bg" style="position: absolute; top: 6px; bottom: 6px; right: 6px; width: calc(50% - 6px); background: var(--gradient-primary); border-radius: 12px; z-index: 0; transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></div>
+                            </div>
+
+                            <div style="position: relative;">
+                                <i data-lucide="user" style="position: absolute; right: 16px; top: 14px; color: var(--text-secondary);"></i>
+                                <input type="text" id="orderName" placeholder="الاسم الكامل أو اسم المحل" required style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 48px 16px 16px; border-radius: 12px; color: #fff; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='var(--accent-cyan)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                            </div>
+
+                            <div style="position: relative;">
+                                <i data-lucide="phone" style="position: absolute; right: 16px; top: 14px; color: var(--text-secondary);"></i>
+                                <input type="tel" id="orderPhone" placeholder="رقم الهاتف (مثال: 0550123456)" required dir="ltr" style="text-align: right; width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 48px 16px 16px; border-radius: 12px; color: #fff; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='var(--accent-cyan)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div style="position: relative;">
+                                    <i data-lucide="map-pin" style="position: absolute; right: 16px; top: 14px; color: var(--text-secondary);"></i>
+                                    <input type="text" id="orderProvince" placeholder="الولاية" required style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 48px 16px 16px; border-radius: 12px; color: #fff; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='var(--accent-cyan)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
                                 </div>
-                                <div class="radio-check"><i data-lucide="check"></i></div>
-                            </label>
-                        </div>
+                                <div style="position: relative;">
+                                    <i data-lucide="store" style="position: absolute; right: 16px; top: 14px; color: var(--text-secondary);"></i>
+                                    <input type="text" id="orderActivity" placeholder="النشاط (اختياري)" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 48px 16px 16px; border-radius: 12px; color: #fff; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='var(--accent-cyan)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" id="btnSubmitOrder" style="width: 100%; padding: 18px; margin-top: 10px; border-radius: 12px; border: none; background: var(--gradient-primary); color: #fff; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);">
+                                <i data-lucide="send"></i>
+                                <span>تأكيد الطلب — 12,000 دج</span>
+                            </button>
+                        </form>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit-order glowing" id="btnSubmitOrder">
-                        <i data-lucide="shopping-bag"></i>
-                        <span>شراء الآن — 12,000 دج فقط</span>
-                    </button>
-                    
-                    <div class="order-trust-footer">
-                        <span><i data-lucide="truck"></i> توصيل حتى باب المحل</span>
-                        <span><i data-lucide="banknote"></i> الدفع عند الاستلام</span>
-                        <span><i data-lucide="clock"></i> التوصيل خلال 48 ساعة</span>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
         
@@ -1135,6 +1151,20 @@
             <i data-lucide="message-circle"></i>
         </a>
     </section>
+
+    <!-- Custom CSS for mobile layout of the new form -->
+    <style>
+        @media (max-width: 768px) {
+            .order-split-layout {
+                grid-template-columns: 1fr !important;
+            }
+            .order-split-layout > div {
+                padding: 30px !important;
+                border-left: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            }
+        }
+    </style>
 
     <!-- ========================================= -->
     <!-- FOOTER -->
@@ -1201,7 +1231,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1.1"></script>
     <!-- ========================================= -->
     <!-- SOCIAL PROOF NOTIFICATIONS (FLOATING) -->
     <!-- ========================================= -->

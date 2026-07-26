@@ -223,12 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentCount = targetCount * easeRatio;
 
                     // Format with Arabic locale if needed, or just standard numbers
-                    el.textContent = Math.floor(currentCount).toLocaleString('ar-SA');
+                    el.textContent = Math.floor(currentCount).toLocaleString('en-US');
 
                     if (ratio < 1) {
                         requestAnimationFrame(animateCounter);
                     } else {
-                        el.textContent = targetCount.toLocaleString('ar-SA');
+                        el.textContent = targetCount.toLocaleString('en-US');
                     }
                 };
                 
@@ -708,32 +708,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === ORDER FORM LOGIC ===
-    const packageCards = document.querySelectorAll('.package-card');
+    const packageCards = document.querySelectorAll('.type-toggle');
     const submitBtnSpan = document.querySelector('#btnSubmitOrder span');
     const submitBtn = document.getElementById('btnSubmitOrder');
     const orderForm = document.getElementById('orderForm');
+    const toggleBg = document.querySelector('.toggle-bg');
     
     // Admin WhatsApp Number (change this to your actual number)
     const adminPhone = "213775977227"; // Tijarti Support Number
 
     if (packageCards.length > 0) {
-        packageCards.forEach(card => {
+        packageCards.forEach((card, index) => {
             const radio = card.querySelector('input[type="radio"]');
             
             card.addEventListener('click', () => {
                 // Remove selected class from all
-                packageCards.forEach(c => c.classList.remove('selected'));
+                packageCards.forEach(c => {
+                    c.classList.remove('selected');
+                    c.style.color = 'var(--text-secondary)';
+                });
                 // Add to current
                 card.classList.add('selected');
+                card.style.color = '#fff';
                 radio.checked = true;
+                
+                if (toggleBg) {
+                    toggleBg.style.transform = index === 0 ? 'translateX(0)' : 'translateX(-100%)';
+                }
                 
                 // Update Button Text & Style
                 if (radio.value === 'trial') {
                     submitBtnSpan.textContent = 'طلب النسخة التجريبية (مجاناً)';
-                    submitBtn.classList.add('btn-trial');
+                    submitBtn.style.background = 'rgba(255,255,255,0.1)';
+                    submitBtn.style.boxShadow = 'none';
                 } else {
-                    submitBtnSpan.textContent = 'شراء الآن — 12,000 دج فقط';
-                    submitBtn.classList.remove('btn-trial');
+                    submitBtnSpan.textContent = 'تأكيد الطلب — 12,000 دج';
+                    submitBtn.style.background = 'var(--gradient-primary)';
+                    submitBtn.style.boxShadow = '0 10px 30px rgba(59, 130, 246, 0.3)';
                 }
             });
         });
