@@ -243,24 +243,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. Gallery Population
     const galleryGrid = document.getElementById('galleryGrid');
     const galleryImages = [
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184506.png', caption: 'نقطة بيع التجزئة' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184519.png', caption: 'نقطة بيع الجملة' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184530.png', caption: 'تأكيد الدفع' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184555.png', caption: 'بون التسليم' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184600.png', caption: 'تيكت POS' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184606.png', caption: 'سجل المعاملات' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184613.png', caption: 'الصندوق والورديات' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184618.png', caption: 'إدارة المنتجات' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184626.png', caption: 'العروض الترويجية' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184631.png', caption: 'المشتريات' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184658.png', caption: 'طلبات التوريد' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184836.png', caption: 'استوديو الصور' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184852.png', caption: 'إعدادات المتجر' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184904.png', caption: 'صلاحيات المستخدمين' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184911.png', caption: 'إحصائيات المبيعات' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184943.png', caption: 'العملاء' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184953.png', caption: 'الموردون' },
-        { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 185009.png', caption: 'تفعيل الترخيص' }
+        { src: 'ui_asset_1.png', caption: 'نقطة بيع التجزئة' },
+        { src: 'ui_asset_2.png', caption: 'نقطة بيع الجملة' },
+        { src: 'ui_asset_3.png', caption: 'تأكيد الدفع' },
+        { src: 'ui_asset_4.png', caption: 'بون التسليم' },
+        { src: 'ui_asset_5.png', caption: 'تيكت POS' },
+        { src: 'ui_asset_6.png', caption: 'سجل المعاملات' },
+        { src: 'ui_asset_7.png', caption: 'الصندوق والورديات' },
+        { src: 'ui_asset_8.png', caption: 'إدارة المنتجات' },
+        { src: 'ui_asset_9.png', caption: 'العروض الترويجية' },
+        { src: 'ui_asset_10.png', caption: 'المشتريات' },
+        { src: 'ui_asset_11.png', caption: 'طلبات التوريد' },
+        { src: 'ui_asset_12.png', caption: 'استوديو الصور' },
+        { src: 'ui_asset_13.png', caption: 'إعدادات المتجر' },
+        { src: 'ui_asset_14.png', caption: 'صلاحيات المستخدمين' },
+        { src: 'ui_asset_15.png', caption: 'إحصائيات المبيعات' },
+        { src: 'ui_asset_16.png', caption: 'العملاء' },
+        { src: 'ui_asset_17.png', caption: 'الموردون' },
+        { src: 'ui_asset_18.png', caption: 'تفعيل الترخيص' }
     ];
 
     if (galleryGrid) {
@@ -550,24 +550,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselTrack = document.getElementById('carouselTrack');
     if (carouselTrack) {
         const carouselImages = [
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184506.png', caption: 'نقطة بيع التجزئة' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184519.png', caption: 'نقطة بيع الجملة' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184530.png', caption: 'تأكيد الدفع' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184555.png', caption: 'بون التسليم' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184600.png', caption: 'تيكت POS' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184606.png', caption: 'سجل المعاملات' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184613.png', caption: 'الصندوق والورديات' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184618.png', caption: 'إدارة المنتجات' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184626.png', caption: 'العروض الترويجية' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184631.png', caption: 'المشتريات' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184658.png', caption: 'طلبات التوريد' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184836.png', caption: 'استوديو الصور' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184852.png', caption: 'إعدادات المتجر' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184904.png', caption: 'صلاحيات المستخدمين' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184911.png', caption: 'إحصائيات المبيعات' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184943.png', caption: 'العملاء' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 184953.png', caption: 'الموردون' },
-            { src: '../01_Stage1_POS_Only/Screenshot 2026-07-26 185009.png', caption: 'تفعيل الترخيص' }
+            { src: 'ui_asset_1.png', caption: 'نقطة بيع التجزئة' },
+            { src: 'ui_asset_2.png', caption: 'نقطة بيع الجملة' },
+            { src: 'ui_asset_3.png', caption: 'تأكيد الدفع' },
+            { src: 'ui_asset_4.png', caption: 'بون التسليم' },
+            { src: 'ui_asset_5.png', caption: 'تيكت POS' },
+            { src: 'ui_asset_6.png', caption: 'سجل المعاملات' },
+            { src: 'ui_asset_7.png', caption: 'الصندوق والورديات' },
+            { src: 'ui_asset_8.png', caption: 'إدارة المنتجات' },
+            { src: 'ui_asset_9.png', caption: 'العروض الترويجية' },
+            { src: 'ui_asset_10.png', caption: 'المشتريات' },
+            { src: 'ui_asset_11.png', caption: 'طلبات التوريد' },
+            { src: 'ui_asset_12.png', caption: 'استوديو الصور' },
+            { src: 'ui_asset_13.png', caption: 'إعدادات المتجر' },
+            { src: 'ui_asset_14.png', caption: 'صلاحيات المستخدمين' },
+            { src: 'ui_asset_15.png', caption: 'إحصائيات المبيعات' },
+            { src: 'ui_asset_16.png', caption: 'العملاء' },
+            { src: 'ui_asset_17.png', caption: 'الموردون' },
+            { src: 'ui_asset_18.png', caption: 'تفعيل الترخيص' }
         ];
 
         // Duplicate for infinite scroll
