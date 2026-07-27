@@ -746,3 +746,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Privacy Policy Modal Logic
+    const policyModal = document.getElementById('policyModal');
+    const openPolicyBtn = document.getElementById('openPolicyModal');
+    const closePolicyBtn = document.getElementById('policyClose');
+
+    if (policyModal && openPolicyBtn && closePolicyBtn) {
+        openPolicyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            policyModal.classList.add('active');
+        });
+
+        closePolicyBtn.addEventListener('click', () => {
+            policyModal.classList.remove('active');
+        });
+
+        policyModal.addEventListener('click', (e) => {
+            if (e.target === policyModal) {
+                policyModal.classList.remove('active');
+            }
+        });
+    }
+});

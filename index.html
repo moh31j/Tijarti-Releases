@@ -1254,7 +1254,7 @@
                     <ul>
                         <li><a href="#">الأسئلة الشائعة</a></li>
                         <li><a href="#">دليل المستخدم</a></li>
-                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="#" id="openPolicyModal">سياسة الخصوصية</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -1286,6 +1286,32 @@
         <div class="lightbox-content">
             <img id="lightboxImage" src="" alt="Preview">
             <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    
+    <!-- Privacy Policy Modal -->
+    <div class="policy-modal" id="policyModal" role="dialog" aria-modal="true">
+        <div class="policy-modal-content">
+            <button class="policy-close" id="policyClose"><i data-lucide="x"></i></button>
+            <div class="policy-header">
+                <h2>سياسة الخصوصية</h2>
+                <p>كيف نحمي بياناتك في نظام Tijarti Suite</p>
+            </div>
+            <div class="policy-body">
+                <div class="policy-section">
+                    <h3><i data-lucide="shield-check"></i> الخصوصية التامة (نظام يعمل محلياً)</h3>
+                    <p>نظام <strong>Tijarti Suite</strong> تم تصميمه ليكون نظاماً <strong>أوفلاين (Offline-First)</strong>، مما يعني أن كافة بيانات متجرك، مبيعاتك، منتجاتك، ومعلومات عملائك يتم تخزينها <strong>محلياً فقط</strong> على جهاز الكمبيوتر الخاص بك. نحن لا نجمع ولا نخزن أي بيانات تجارية في خوادم سحابية.</p>
+                </div>
+                <div class="policy-section">
+                    <h3><i data-lucide="key"></i> تفعيل الترخيص</h3>
+                    <p>عند التفعيل، يتطلب النظام اتصالاً مؤقتاً بالإنترنت لمرة واحدة فقط للتحقق من صحة كود التفعيل (License Key). لا يتم نقل أي تفاصيل شخصية أو تجارية.</p>
+                </div>
+                <div class="policy-section">
+                    <h3><i data-lucide="database"></i> النسخ الاحتياطي</h3>
+                    <p>المسؤولية الكاملة عن الحفاظ على البيانات من الضياع تقع على عاتق المستخدم. نوصي بشدة بحفظ النسخ الاحتياطية دورياً على قرص خارجي.</p>
+                </div>
+            </div>
         </div>
     </div>
 
